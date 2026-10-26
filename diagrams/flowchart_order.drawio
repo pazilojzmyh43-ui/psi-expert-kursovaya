@@ -1,0 +1,45 @@
+<mxfile host="app.diagrams.net" modified="2026-10-26T09:40:00.000Z" agent="Grok" version="21.0.0">
+  <diagram name="Блок-схема оформления заказа" id="flow_order">
+    <mxGraphModel dx="800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="start" value="Начало" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="auth" value="Пользователь авторизован как Клиент?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="260" y="140" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="login" value="Перенаправление на авторизацию" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="select" value="Выбор услуги в каталоге" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="280" y="260" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="add" value="Добавление в корзину (Order status=cart)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="340" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="viewcart" value="Просмотр корзины, изменение количества" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="420" width="240" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="place" value="Оформление заказа (status=new)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="260" y="500" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="save" value="Сохранение Order и OrderItem в БД" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="580" width="220" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="end" value="Конец (заказ создан)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="660" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="fe1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="start" target="auth"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="auth" target="login"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe3" value="Да" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="auth" target="select"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="select" target="add"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="add" target="viewcart"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="viewcart" target="place"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="place" target="save"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="fe8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="save" target="end"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
